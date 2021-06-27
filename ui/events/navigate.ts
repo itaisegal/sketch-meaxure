@@ -69,13 +69,15 @@ export function parseURLHash() {
     /**
      *  #[s|p][index]  
       s: specification mode  
-      p: prototype mode  
+      p: prototype mode  s
       index: artboard index
      */
     let hash = window.location.hash;
     result.flowMode = hash.substr(1, 1) === 'p';
-    let index = Number(hash.substr(1));
-    if (isNaN(index)) index = Number(hash.substr(2));
+	let index = Number(hash.substr(9));
+	alert('hash: ' + hash);
+	alert('substr: ' + hash.substr(9));
+    if (isNaN(index)) index = Number(hash.substr(9));
     if (isNaN(index)) index = 0
     result.artboardIndex = index;
     return result;
