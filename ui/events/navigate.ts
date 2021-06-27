@@ -75,8 +75,7 @@ export function parseURLHash() {
     let hash = window.location.hash;
     result.flowMode = hash.substr(1, 1) === 'p';
 	let index = Number(hash.substr(9));
-	alert('hash: ' + hash);
-	alert('substr: ' + hash.substr(9));
+
     if (isNaN(index)) index = Number(hash.substr(9));
     if (isNaN(index)) index = 0
     result.artboardIndex = index;
