@@ -58,7 +58,7 @@ export function historyBackUntilAnotherArtboard() {
 }
 
 export function getURLHash(): string {
-    return `#${flowMode ? 'p' : 's'}${state.artboardIndex}`;
+    return `#${flowMode ? 'p' : 'artboard'}${state.artboardIndex}`;
 }
 
 export function parseURLHash() {
