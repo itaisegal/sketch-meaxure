@@ -32,7 +32,7 @@ export function artboards() {
             `<small>${artboard.pageName}</small>` +
             `</div>`;
         artboardListHTML.push(
-            `<li id="artboard-${index}" class="artboard${classNames}" data-page-id="${artboard.pageObjectID}" data-id="${artboard.objectID}" data-index="${index}" >` +
+            `<li id="artboard-${index}" tabindex class="artboard${classNames}" data-page-id="${artboard.pageObjectID}" data-id="${artboard.objectID}" data-index="${index}" >` +
             artboardLiBody +
             `</li>`
         );

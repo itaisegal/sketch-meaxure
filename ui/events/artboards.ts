@@ -4,10 +4,14 @@ import { gotoArtboard } from "./navigate";
 
 export function artboardsEvents() {
     let artboardsList = document.querySelector('#artboards') as HTMLElement;
-    eventDelegate(artboardsList, 'click', '.artboard', function (event) {
+    eventDelegate(artboardsList, 'focusin', '.artboard', function (event) {
         let index = getIndex(this);
         gotoArtboard(index);
-    });
+		});
+		eventDelegate(artboardsList, 'click', '.artboard', function (event) {
+			let index = getIndex(this);
+			gotoArtboard(index);
+	});
     eventDelegate(artboardsList, 'change', 'input[name=page]', function (event) {
         var pObjectID = (document.querySelector('.page-list input[name=page]:checked') as HTMLInputElement).value;
         document.querySelector('.pages-select h3')

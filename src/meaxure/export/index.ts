@@ -192,7 +192,7 @@ function exportArtboardAdvanced(artboard: Artboard, data: ExportData, savePath: 
 
     exportImage(artboard, {
         format: 'png',
-        scale: 128 / Math.max(data.artboards[i].width, data.artboards[i].height),
+        scale: .5,//64 / Math.max(data.artboards[i].width, data.artboards[i].height),
         prefix: "",
         suffix: "",
     }, savePath + "/preview/icons", data.artboards[i].slug);
