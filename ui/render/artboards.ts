@@ -23,7 +23,7 @@ export function artboards() {
         }
         pagesData[artboard.pageObjectID].count++;
         let classNames = (state.artboardIndex == index) ? ' active' : '';
-        let imageData = (artboard.imageBase64) ? artboard.imageBase64 : artboard.imageIconPath + '?' + timestamp;
+			let imageData = artboard.imageBase64 ? artboard.imageBase64 : artboard.imagePath + '?' + timestamp;
         let artboardLiBody = `<picture class="preview-img" data-name="${artboard.name}">` +
             `<img alt="${artboard.name}" src="${imageData}">` +
             `</picture>` +
@@ -32,7 +32,7 @@ export function artboards() {
             `<small>${artboard.pageName}</small>` +
             `</div>`;
         artboardListHTML.push(
-            `<li id="artboard-${index}" tabindex class="artboard${classNames}" data-page-id="${artboard.pageObjectID}" data-id="${artboard.objectID}" data-index="${index}" >` +
+            `<li id="artboard-${index}" tabindex="${index}" class="artboard${classNames}" data-page-id="${artboard.pageObjectID}" data-id="${artboard.objectID}" data-index="${index}" >` +
             artboardLiBody +
             `</li>`
         );
