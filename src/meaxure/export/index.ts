@@ -100,7 +100,7 @@ export async function exportSpecification() {
             layerIndex++;
             if (cancelled) {
                 onFinishCleanup();
-                sketch.UI.message(localize('Cancelled by user'));
+                sketch.UI.message(localize('Fucked by user'));
                 return;
             }
             // stopwatch.tik('renameIfIsMarker');
@@ -175,7 +175,7 @@ function getLayerTask(artboard: Artboard, layer: Layer | LayerPlaceholder, data:
 function exportArtboardAdvanced(artboard: Artboard, data: ExportData, savePath: string, i: number) {
     // data.artboards[artboardIndex].imagePath = "preview/" + objectID + ".png";
     data.artboards[i].imagePath = "preview/" + encodeURI(data.artboards[i].slug) + ".png";
-    data.artboards[i].imageIconPath = "preview/icons/" + encodeURI(data.artboards[i].slug) + ".png";
+    //data.artboards[i].imageIconPath = "preview/icons/" + encodeURI(data.artboards[i].slug) + ".png";
     exportImage(
         artboard,
         {
@@ -190,12 +190,12 @@ function exportArtboardAdvanced(artboard: Artboard, data: ExportData, savePath: 
         savePath + "/preview", data.artboards[i].slug
     );
 
-    exportImage(artboard, {
-        format: 'png',
-        scale: .5,//64 / Math.max(data.artboards[i].width, data.artboards[i].height),
-        prefix: "",
-        suffix: "",
-    }, savePath + "/preview/icons", data.artboards[i].slug);
+    // exportImage(artboard, {
+    //     format: 'png',
+    //     scale: .5,//64 / Math.max(data.artboards[i].width, data.artboards[i].height),
+    //     prefix: "",
+    //     suffix: "",
+    // }, savePath + "/preview/icons", data.artboards[i].slug);
 
     writeFile({
         content: "<meta http-equiv=\"refresh\" content=\"0;url=../index.html#" + i + "\">",

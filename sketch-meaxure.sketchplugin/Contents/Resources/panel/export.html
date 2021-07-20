@@ -148,7 +148,7 @@
                     '</div>',
                     '</div>',
                     '<div class="options-bar" style="margin-bottom:0;">',
-                    '<div class="opts-checkbox" tabindex="0">',
+                    '<div class="opts-checkbox">',
                     '<div class="v-checkbox v-checked"></div>',
                     '<ul class="checkbutton">',
                     '<li class="c-all">' + _('All') + '</li>',
@@ -235,7 +235,7 @@
                             var liTop = 'top:' + 48 * index + 'px;',
                                 classAlt = (index % 2) ? 'alt' : '';
                             artboardsList.push(
-                                '<li id="aid-' + artboard.objectID + '" tabindex="'+artboard.objectID+'" class="' + classAlt + '" title="' + artboard.name + '" style="' + liTop + '">',
+                                '<li id="aid-' + artboard.objectID + '" class="' + classAlt + '" title="' + artboard.name + '" style="' + liTop + '">',
                                 '<label class="artboard-item">',
                                 '<div class="checkbox">',
                                 '<input id="artboard-' + artboard.objectID + '" type="checkbox" class="page-' + pageIndex + '" name="artboards" value="' + artboard.objectID + '">',
