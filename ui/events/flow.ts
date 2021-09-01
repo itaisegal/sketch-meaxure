@@ -36,10 +36,10 @@ function flowClickEvents() {
 }
 
 function flowModeSwitchEvents() {
-    document.querySelector('#flow-mode').addEventListener('change', function () {
-        setFlowMode((this as HTMLInputElement).checked);
-        updateURLHash();
-    })
+   // document.querySelector('#flow-mode').addEventListener('change', function () {
+   //     setFlowMode((this as HTMLInputElement).checked);
+   //     updateURLHash();
+   // })
 }
 
 export function setFlowMode(enabled: boolean) {
@@ -47,9 +47,9 @@ export function setFlowMode(enabled: boolean) {
     let viewer = document.querySelector('.screen-viewer') as HTMLDivElement;
     let screen = document.querySelector('#screen') as HTMLDivElement;
     let currentRect = screen.getBoundingClientRect();
-    let inputFlowMode = document.querySelector('#flow-mode') as HTMLInputElement;
+    //let inputFlowMode = document.querySelector('#flow-mode') as HTMLInputElement;
     // set checked won't trigge change event
-    inputFlowMode.checked = enabled;
+    //inputFlowMode.checked = enabled;
     let hideOnFLow = [
         '#layers',
         '#unit',

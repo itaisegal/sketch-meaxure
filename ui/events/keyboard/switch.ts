@@ -1,7 +1,7 @@
 import { clickElement } from "../helper";
 
 export function keyboardSwitchEvents() {
-    window.addEventListener('keydown', event => {
+   /* window.addEventListener('keydown', event => {
         switch (String.fromCharCode(event.which)) {
             case 'M':
                 clickElement(
@@ -19,4 +19,5 @@ export function keyboardSwitchEvents() {
                 break;
         }
     });
+		*/
 }
