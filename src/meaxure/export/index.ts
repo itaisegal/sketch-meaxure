@@ -175,7 +175,7 @@ function getLayerTask(artboard: Artboard, layer: Layer | LayerPlaceholder, data:
 function exportArtboardAdvanced(artboard: Artboard, data: ExportData, savePath: string, i: number) {
     // data.artboards[artboardIndex].imagePath = "preview/" + objectID + ".png";
     data.artboards[i].imagePath = "preview/" + encodeURI(data.artboards[i].slug) + ".png";
-    //data.artboards[i].imageIconPath = "preview/icons/" + encodeURI(data.artboards[i].slug) + ".png";
+    data.artboards[i].imageIconPath = "preview/icons/" + encodeURI(data.artboards[i].slug) + ".png";
     exportImage(
         artboard,
         {
@@ -197,6 +197,13 @@ function exportArtboardAdvanced(artboard: Artboard, data: ExportData, savePath: 
     //     suffix: "",
     // }, savePath + "/preview/icons", data.artboards[i].slug);
 
+		exportImage(artboard, {
+			format: 'png',
+			scale: .8 / data.resolution,
+			prefix: "",
+			suffix: "",
+	}, savePath + "/preview/icons", data.artboards[i].slug);
+
     writeFile({
         content: "<meta http-equiv=\"refresh\" content=\"0;url=../index.html#" + i + "\">",
         path: savePath + "/links",
@@ -213,7 +220,7 @@ function exportArtboard(artboard: Artboard, exportData: ExportData, index: numbe
             // always export @2x (logic points * 2)
             // if design resolution @2x, we export as is (scale=1)
             // if design resolution @4x, we export half size (scale=0.5)
-            scale: 2 / exportData.resolution,
+            scale: 1.5 / exportData.resolution,
             prefix: "",
             suffix: "",
         }

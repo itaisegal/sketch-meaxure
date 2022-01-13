@@ -23,7 +23,7 @@ export function artboards() {
         }
         pagesData[artboard.pageObjectID].count++;
         let classNames = (state.artboardIndex == index) ? ' active' : '';
-			let imageData = artboard.imageBase64 ? artboard.imageBase64 : artboard.imagePath + '?' + timestamp;
+			let imageData = artboard.imageBase64 ? artboard.imageBase64 : artboard.imageIconPath + '?' + timestamp;
         let artboardLiBody = `<picture class="preview-img" data-name="${artboard.name}">` +
             `<img alt="${artboard.name}" src="${imageData}">` +
             `</picture>` +
