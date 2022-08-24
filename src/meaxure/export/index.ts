@@ -171,7 +171,7 @@ function getLayerTask(artboard: Artboard, layer: Layer | LayerPlaceholder, data:
         resolve(true);
     });
 }
-
+/* resize images of preview and screen - itai segal */
 function exportArtboardAdvanced(artboard: Artboard, data: ExportData, savePath: string, i: number) {
     // data.artboards[artboardIndex].imagePath = "preview/" + objectID + ".png";
     data.artboards[i].imagePath = "preview/" + encodeURI(data.artboards[i].slug) + ".png";
@@ -183,7 +183,7 @@ function exportArtboardAdvanced(artboard: Artboard, data: ExportData, savePath: 
             // always export @2x (logic points * 2)
             // if design resolution @2x, we export as is (scale=1)
             // if design resolution @4x, we export half size (scale=0.5)
-            scale: 2 / data.resolution,
+            scale: artboard.frame.width > 720 ? 1.3 : 2,
             prefix: "",
             suffix: "",
         },
@@ -199,7 +199,7 @@ function exportArtboardAdvanced(artboard: Artboard, data: ExportData, savePath: 
 
 		exportImage(artboard, {
 			format: 'png',
-			scale: .8 / data.resolution,
+			scale: artboard.frame.width > 720 ? .3 : .8,
 			prefix: "",
 			suffix: "",
 	}, savePath + "/preview/icons", data.artboards[i].slug);
