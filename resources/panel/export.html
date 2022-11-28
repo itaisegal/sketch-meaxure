@@ -148,16 +148,23 @@
                     '</div>',
                     '</div>',
                     '<div class="options-bar" style="margin-bottom:0;">',
-                    '<div class="opts-checkbox">',
+                        '<div class="opts-checkbox">',
+                        '<div class="checkbox">',
+                            '<input id="selectAll" class="checkbox" type="checkbox" name="selectAll" value="0">',
+                            '<label for="selectAll"></label>',
+                        '</div>',
+                    '</div>',
+                   /* 
+                   
                     '<div class="v-checkbox v-checked"></div>',
-                    '<ul class="checkbutton">',
+                   '<ul class="checkbutton">',
                     '<li class="c-all">' + _('All') + '</li>',
                     '<li class="c-none">' + _('None') + '</li>',
                     '<li class="c-showing">' + _('Select filtered') + '</li>',
                     '<li class="c-selection">' + _('Selection of Sketch') + '</li>',
                     '<li class="c-current">' + _('Current of Sketch') + '</li>',
                     '</ul>',
-                    '</div>',
+                    */
                     '<div class="opts-filter">',
                     '<input id="filter" type="text" placeholder="' + _('Filter') + '">',
                     '</div>',
@@ -312,6 +319,20 @@
                         $('.opts-checkbox').blur();
                         checkVCheckbox();
                         checkPCheckbox();
+                    });
+
+                    $('#selectAll').change(function(){
+                        if ($(this).is(':checked')) {
+                            $('input[name=artboards]').prop("checked", true);
+                            $('.opts-checkbox').blur();
+                            checkVCheckbox();
+                            checkPCheckbox();
+                        } else {
+                            $('input[name=artboards]').prop("checked", false);
+                            $('.opts-checkbox').blur();
+                            checkVCheckbox();
+                            checkPCheckbox();
+                        }
                     });
 
                 $('input[name=pages]').change(function () {

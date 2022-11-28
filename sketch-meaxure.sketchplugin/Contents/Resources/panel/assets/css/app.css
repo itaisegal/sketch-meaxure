@@ -179,7 +179,7 @@ button{
     background-color: #FFF;
     background-position-y: 0;
 }
-.radiobox input[type=radio]:disabled + label{
+.radiobox input[type=radio]:d + label{
     background-color: rgba(0,0,0,0.32);
     background-position-y: -100px;
 }
@@ -566,7 +566,7 @@ button{
     background: #0D0D0D;
     outline: 0;
 }
-.opts-checkbox:after{
+/* .opts-checkbox:after{
     position: absolute;
     top: 12px;
     right:10px;
@@ -576,6 +576,11 @@ button{
     height: 6px;
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMBAMAAACQIoDIAAAAHlBMVEUAAABWVlZWVlZWVlZWVlZXV1dWVlZXV1daWlpVVVW+VTeTAAAACXRSTlMA7tm7lWpEJhE46DAfAAAAUElEQVQI12PwnAkFUxiYYUwDBg5NCGtSAwNDIYQpzsDAwAZhJjAAQSSINZUBBFhATAcGMLCcOXMyAwQ0zZypAWWyS04sYICCzGkMMMAaACIBMHIj3XIC4A0AAAAASUVORK5CYII=) no-repeat;
     background-size: 10px 6px;
+} */
+.opts-checkbox>div {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 .checkbutton{
     position: absolute;
